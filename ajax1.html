@@ -9,31 +9,21 @@
 
 <script>
 function login() {
-    console.log("login");
-	var username = $("#name").val();
-	var password = $("#pass").val();
-
-	var params = {
-		username: username,
-		password: password
-	};
-    console.log(params);
-    //$("#logon").click(function() {
-   // console.log(" button pressed");
-	$.post("/ajax1.html", params, function(result) {
-        console.log("in signin");
-		if (result && result.success) {
-			
-			console.log("inside if statement");
-			document.querySelector('#name').style.visibility = "hidden";
-	        document.querySelector('#pass').style.visibility = "hidden";
-	        
-			$("#status").text("user name" + username + " password " + password);
-		} else {
-			$("#status").text("Error logging in.");
-		}
+    var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://community-open-weather-map.p.rapidapi.com/weather?callback=test&id=2172797&units=%2522metric%2522%20or%20%2522imperial%2522&mode=xml%252C%20html&q=London%252Cuk",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+		"x-rapidapi-key": "c338f66167mshe9fb1de27976645p1d04dfjsnf74dbd450751"
+	}
+	
+}
+$.ajax(settings).done(function (response) {
+	console.log(response);
     });
-//});
+
 }
 </script>
 
