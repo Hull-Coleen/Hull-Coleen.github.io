@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<title>AJAX</title>
+
+
+<script>
+function login() {
+    console.log("login");
+	var username = $("#name").val();
+	var password = $("#pass").val();
+
+	var params = {
+		username: username,
+		password: password
+	};
+    console.log(params);
+    //$("#logon").click(function() {
+   // console.log(" button pressed");
+	$.post("/ajax1.html", params, function(result) {
+        console.log("in signin");
+		if (result && result.success) {
+			
+			console.log("inside if statement");
+			document.querySelector('#name').style.visibility = "hidden";
+	        document.querySelector('#pass').style.visibility = "hidden";
+	        
+			$("#status").text("user name" + username + " password " + password);
+		} else {
+			$("#status").text("Error logging in.");
+		}
+    });
+//});
+}
+</script>
+
+</head>
+<body>
+    <input type="name" class="userinput" id="name"  placeholder="User Name"></input><br>
+    <input type="password"  class="userinput" id="pass"   placeholder="Password"></input>
+    <input  class="button" id="logon" name="signin" onclick='login()' type="submit" value="Sign In">
+    <p id="status"></p>
+
+</body>
+</html>
