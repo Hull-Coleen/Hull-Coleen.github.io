@@ -18,7 +18,7 @@
 		var data = null;
 
 		var xhr = new XMLHttpRequest();
-		xhr.withCredentials = true;
+		//xhr.withCredentials = true;
 	    
 
 		xhr.addEventListener("readystatechange", function () {
@@ -28,11 +28,11 @@
 		});
 
 		xhr.open("POST", "https://accuweatherstefan-skliarovv1.p.rapidapi.com/get24HoursConditionsByLocationKey", true);
-		xhr.setRequestHeader("x-rapidapi-host", "AccuWeatherstefan-skliarovV1.p.rapidapi.com");
-		xhr.setRequestHeader("x-rapidapi-key", "c338f66167mshe9fb1de27976645p1d04dfjsnf74dbd450751");
-		xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+		//xhr.setRequestHeader("x-rapidapi-host", "AccuWeatherstefan-skliarovV1.p.rapidapi.com");
+		//xhr.setRequestHeader("x-rapidapi-key", "c338f66167mshe9fb1de27976645p1d04dfjsnf74dbd450751");
+		//xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
-		xhr.send(data);
+		xhr.send();
 
 		
 </script>
