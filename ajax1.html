@@ -6,33 +6,35 @@
 
 <title>AJAX</title>
 
-
-<script>
-function login() {
-    var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://community-open-weather-map.p.rapidapi.com/weather?callback=test&id=2172797&units=%2522metric%2522%20or%20%2522imperial%2522&mode=xml%252C%20html&q=London%252Cuk",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-		"x-rapidapi-key": "c338f66167mshe9fb1de27976645p1d04dfjsnf74dbd450751"
-	}
-	
-}
-$.ajax(settings).done(function (response) {
-	console.log(response);
-    });
-
-}
-</script>
-
 </head>
 <body>
     <input type="name" class="userinput" id="name"  placeholder="User Name"></input><br>
     <input type="password"  class="userinput" id="pass"   placeholder="Password"></input>
-    <input  class="button" id="logon" name="signin" onclick='login()' type="submit" value="Sign In">
-    <p id="status"></p>
+    <input  class="button" id="logon" name="signin"  type="submit" value="Sign In">
+	<p id="status"></p>
+	
+	<script>
+		var c = "c338f66167mshe9fb1de27976645p1d04dfjsnf74dbd450751";
+		var data = null;
+
+		var xhr = new XMLHttpRequest();
+		xhr.withCredentials = true;
+
+		xhr.addEventListener("readystatechange", function () {
+			if (this.readyState === this.DONE) {
+				console.log(this.responseText);
+			}
+		});
+
+		xhr.open("POST", "https://accuweatherstefan-skliarovv1.p.rapidapi.com/get24HoursConditionsByLocationKey");
+		xhr.setRequestHeader("x-rapidapi-host", "AccuWeatherstefan-skliarovV1.p.rapidapi.com");
+		xhr.setRequestHeader("x-rapidapi-key", "c338f66167mshe9fb1de27976645p1d04dfjsnf74dbd450751");
+		xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+		xhr.send(data);
+
+		
+</script>
 
 </body>
 </html>
