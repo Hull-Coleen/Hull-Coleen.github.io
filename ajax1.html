@@ -7,7 +7,8 @@
 <title>AJAX</title>
 
 </head>
-<body>
+<body onload="requestData()">
+
     <input type="text" class="userinput" id="city"  placeholder="City"></input><br>
     <input  class="button" id="logon" name="signin"  onclick= "requestData()" type="submit" value="GetJSON Enter">
 	<input  class="button" id="xml"  onclick= "xmlRequest()" type="submit" value="xml Enter">
