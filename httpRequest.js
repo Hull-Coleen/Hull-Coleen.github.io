@@ -79,51 +79,52 @@ const appKey = "4fdb2d8339feaef5789bedc8a5c9b43d";
 				
 				var li = document.getElementById(i + count );
 				count++;
-					var li1 = document.getElementById(i + count );
-					count++;
-					var li2 = document.getElementById(i + count);
-					count++
-					var iconcode = JsonText.list[i].weather[0].icon;
-					var image = document.getElementById("image" + i);
-				    image.src = "http://openweathermap.org/img/w/" + iconcode + ".png";
-				    li.innerHTML = "Day " + (i + 1);
-				    li1.innerHTML = farenheit(JsonText.list[i].main.temp);
-				    li2.innerHTML = JsonText.list[i].weather[0].description;
+				var li1 = document.getElementById(i + count );
+				count++;
+				var li2 = document.getElementById(i + count);
+				count++
+				var iconcode = JsonText.list[i].weather[0].icon;
+				var image = document.getElementById("image" + i);
+			    image.src = "http://openweathermap.org/img/w/" + iconcode + ".png";
+				li.innerHTML = "Day " + (i + 1);
+				li1.innerHTML = farenheit(JsonText.list[i].main.temp);
+				li2.innerHTML = JsonText.list[i].weather[0].description;
 			}
 		}
 		else {
 			for(i=0; i < 5; i++) {
-					var a = "day" + (i + 1);
-					var ul = document.getElementById(a);
-					var b = i + 1;
-					li = document.createElement("li");
-					li.setAttribute("id", i + count);
-					console.log(li.id);
-					count++;
-					var li1 = document.createElement("li");
-					li1.setAttribute("id", i + count);
-					console.log(li1.id);
-					count++;
-					var li2 = document.createElement("li");
-					li2.setAttribute("id", i + count);
-					console.log(li2.id);
-					count++;
-					var li3 = document.createElement("li");
-					li3.setAttribute("id", i + count);
-					console.log(li3.id);
-					var image = document.createElement("img");
-					image.setAttribute("id" , "image" + i);
-					console.log('image id ' + image.id);
-					var iconcode = JsonText.list[i].weather[0].icon;
-					image.src = "http://openweathermap.org/img/w/" + iconcode + ".png";
-					li.innerHTML = "Day " + (i + 1);
-					li1.innerHTML = farenheit(JsonText.list[i].main.temp);
-					li2.innerHTML = JsonText.list[i].weather[0].description;
-					ul.appendChild(li);
-					ul.appendChild(li1);
-					ul.appendChild(li2);
-					ul.appendChild(li3);
-					li3.appendChild(image);
+					
+				var a = "day" + (i + 1);
+				var ul = document.getElementById(a);
+				var b = i + 1;
+				li = document.createElement("li");
+				li.setAttribute("id", i + count);
+				console.log(li.id);
+				count++;
+				var li1 = document.createElement("li");					
+				li1.setAttribute("id", i + count);
+				console.log(li1.id);
+				count++;
+				var li2 = document.createElement("li");
+				li2.setAttribute("id", i + count);
+				console.log(li2.id);
+				count++;					
+				var li3 = document.createElement("li");
+				li3.setAttribute("id", i + count);
+				console.log(li3.id);
+				var image = document.createElement("img");
+				image.setAttribute("id" , "image" + i);				
+				console.log('image id ' + image.id);
+				var iconcode = JsonText.list[i].weather[0].icon;
+				image.src = "http://openweathermap.org/img/w/" + iconcode + ".png";
+				li.innerHTML = "Day " + (i + 1);
+				li1.innerHTML = farenheit(JsonText.list[i].main.temp);
+				li2.innerHTML = JsonText.list[i].weather[0].description;
+				ul.appendChild(li);
+				ul.appendChild(li1);
+				ul.appendChild(li2);
+				ul.appendChild(li3);
+				li3.appendChild(image);
 
 			}
 		}
