@@ -54,21 +54,21 @@ const appKey = "4fdb2d8339feaef5789bedc8a5c9b43d";
 		Ftemp = (temp - 273.15) * 9/5 + 32;
 		return Ftemp.toFixed(0);
 	}
-	    function hide() {
+	function hide() {
 		
-			$(".item3").hide();
-			$(".item4").hide();
-			$(".item5").hide();
-			$(".item6").hide();
-			$(".item7").hide();
+		$(".item3").hide();
+		$(".item4").hide();
+		$(".item5").hide();
+		$(".item6").hide();
+		$(".item7").hide();
 
 	}
 	function show() {
-			$(".item3").show();
-			$(".item4").show();
-			$(".item5").show();
-			$(".item6").show();
-			$(".item7").show();
+		$(".item3").show();
+		$(".item4").show();
+		$(".item5").show();
+		$(".item6").show();
+		$(".item7").show();
 	}
 		
 	function parseData() {
