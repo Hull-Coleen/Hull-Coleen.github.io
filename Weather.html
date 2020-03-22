@@ -7,7 +7,7 @@
 <title>Weather App</title>
 
 </head>
-<body onload="hide(); getLocalStoreage()"> 
+<body onload="/*hide(); */getLocalStoreage(); itemShow();moving()"> 
   <div class = "grid">
     <div class = "item1">
 	  <h1>Weather App</h1>
@@ -34,16 +34,11 @@
 		<ul id = "day5"></ul>
 	</div>
 	<div class = "item8">
-		<img id= "imageSun2" src="sun.jfif" alt="weather icom">
+		<img class= "imageSun2" src="sun.jfif" alt="weather icom">
 	</div>
 	<div class = "item9">
-		<img id= "imageSun2" src="sun.jfif" alt="weather icom">
+		<img class= "imageSun2" src="sun.jfif" alt="weather icom">
 	</div>
-
-	<!--<input  class="button" id="xml"  onclick= "xmlRequest()" type="submit" value="xml Enter">
-	<input  class="button" id="xml"  onclick= "test()" type="submit" value="How XML response">
-	<input  class="button" id="xml"  onclick= "test2()" type="submit" value="Show Jquery response"> -->
-	<p id="status"></p>
 	
   </div>
   <script type="text/javascript" src="httpRequest.js"></script>
