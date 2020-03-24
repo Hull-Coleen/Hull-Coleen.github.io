@@ -13,15 +13,19 @@ function setLocalStoreage(searchInput) {
 function getLocalStoreage() {
 	var city = localStorage.getItem("city");
 	if (city !== undefined || city !== "") {
-	   document.getElementById("city").placeholder = city; 
+	   document.getElementById("city").placeholder = city;
+	   $("#city").innerHTML = city; 
 	}
+	return city;
 }	
 // gets data from openweather using api calls parseData and setLocalStore functions 
 function requestData() {
-	var searchInput = $("#city").val();
+	//var searchInput = getLocalStorage();
+	searchIn = $("#city").val();
 	if (searchInput == undefined || searchInput == ""){
-		 searchInput = "london";
+		 searchInput = "London";
 	}
+	
     setLocalStoreage(searchInput);
 	$.getJSON(url1 + searchInput + "&cnt=5" + "&appid=" + appK, {
 	})
